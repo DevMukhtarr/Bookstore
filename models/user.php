@@ -54,8 +54,6 @@ class User{
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':password', $this->password);
             $stmt->execute();
-          // Print error if something goes wrong
-            printf("Error: %s.\n", $stmt->error);
       
             return true;
           }
