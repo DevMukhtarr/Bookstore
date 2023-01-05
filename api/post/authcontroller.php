@@ -73,6 +73,10 @@ class Authentication{
             $env = parse_ini_file('.env');
             $secret = $env['JWT_SECRET_KEY'];
             $jwt = JWT::encode($payload, $secret, 'HS256');
+            $database = new Database();
+            $db = $database->connect();
+
+            $user = new User($db);
     
             if (empty($email) or empty($password)){
                 echo json_encode(
@@ -80,12 +84,20 @@ class Authentication{
                   );
                   return false;
                 }
-                echo json_encode(
-                    array(
-                        'message' => "Login successful",
-                        'token' => $jwt
-                    )
-                  );
+                if($user->checkPassword($email, $password)){
+                    echo json_encode(
+                        array(
+                            'message' => "Login successful",
+                            'token' => $jwt
+                        )
+                      );
+                }else{
+                    echo json_encode(
+                        array(
+                            'message' => "email or password incorrect",
+                        )
+                      );
+                }
         }
         catch (\Throwable $th) {
             //throw $th;

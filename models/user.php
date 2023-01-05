@@ -92,14 +92,38 @@ class User{
         echo $th;
         return false;
       }
-  }
+    }
+
+    public function checkPassword($useremail, $password){
+      try {
+        //code...
+        $get_password_query =  "SELECT password FROM user WHERE email= :useremail";
+        
+        $stmt = $this->conn->prepare($get_password_query);
+
+        $stmt->bindParam(':useremail', $useremail);
+        $stmt->execute();
+
+        $hashedPassword = $stmt->fetchColumn();
+
+        if(password_verify($password, $hashedPassword)){
+          return true;
+        }else{
+          return false;
+        } 
+      } catch (\Throwable $th) {
+        //throw $th;
+        echo $th;
+        return false;
+      }
+    }
 
     public function createBook($author, $title, $useremail) {
       // Create query
       try {
-          //code...
-          $check_table = $this->conn->prepare("SHOW TABLES LIKE 'books'");
-          if ($check_table->rowCount() > 0) {
+        //code...
+        $check_table = $this->conn->prepare("SHOW TABLES LIKE 'books'");
+        if ($check_table->rowCount() > 0) {
             $query = 'INSERT INTO ' . 'books' . ' SET title = :title, author = :author, useremail = :useremail';
             
             $stmt = $this->conn->prepare($query);
