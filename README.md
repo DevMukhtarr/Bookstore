@@ -129,3 +129,138 @@ Response sample:
     "message": "New Book Uploaded"
 }
 ```
+
+## Read Book Details
+
+> POST /view-books
+
+General:
+
+- Read All Book details available in the database relative to a user
+
+> sample http://localhost:8000/view-books
+
+Request sample:
+
+Adding the JWT gotten from Login or Register response with `x-access-token` as the key i.e.
+
+` 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IkpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjcyNjkxNjYxfQ.LBAONOO31VUC2-LB8OFTMf78YUYN9DVJ3ac81X7bK8Q`
+
+Response sample:
+
+```
+[
+    {
+        "id": "2",
+        "title": "Master Mind: The Memoirs of Napoleon Hill",
+        "author": "Napoleon Hill"
+    },
+    {
+        "id": "3",
+        "title": "An Image of Africa",
+        "author": "Chinua Achebe"
+    }
+]
+```
+
+## Update Book Title
+
+> POST /update-title
+
+General:
+
+- Update Book Title
+
+> sample http://localhost:8000/update-title
+
+Request sample:
+
+Adding the JWT gotten from Login or Register response with `x-access-token` as the key i.e.
+
+` 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IkpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjcyNjkxNjYxfQ.LBAONOO31VUC2-LB8OFTMf78YUYN9DVJ3ac81X7bK8Q`
+
+Request sample:
+
+```
+{
+    "id": 3,
+    "title": "The Voter"
+}
+```
+
+Response sample:
+
+```
+{
+    "message": "Title updated successfully"
+}
+```
+
+## Update Book Author
+
+> POST /update-author
+
+General:
+
+- Update Book Author
+
+> sample http://localhost:8000/update-author
+
+Request sample:
+
+Adding the JWT gotten from Login or Register response with `x-access-token` as the key i.e.
+
+` 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IkpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjcyNjkxNjYxfQ.LBAONOO31VUC2-LB8OFTMf78YUYN9DVJ3ac81X7bK8Q`
+
+Request sample:
+
+```
+{
+    "id": 3,
+    "author": "Albert Chinụalụmọgụ Achebe"
+}
+```
+
+Response sample:
+
+```
+{
+    "message": "Author updated successfully"
+}
+```
+
+## Delete Book Details
+
+> POST /delete-book
+
+General:
+
+- Delete Book Details
+
+> sample http://localhost:8000/delete-book
+
+Request sample:
+
+Adding the JWT gotten from Login or Register response with `x-access-token` as the key i.e.
+
+` 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IkpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjcyNjkxNjYxfQ.LBAONOO31VUC2-LB8OFTMf78YUYN9DVJ3ac81X7bK8Q`
+
+Request sample:
+
+```
+{
+    "id": 3,
+}
+```
+
+Response sample:
+
+```
+{
+    "message": "Book deleted successfully"
+}
+```
