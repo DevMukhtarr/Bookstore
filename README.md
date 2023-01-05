@@ -112,8 +112,7 @@ Request sample:
 
 Adding the JWT gotten from Login or Register response with `x-access-token` as the key i.e.
 
-` 
-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IkpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjcyNjkxNjYxfQ.LBAONOO31VUC2-LB8OFTMf78YUYN9DVJ3ac81X7bK8Q`
+`eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IkpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjcyNjkxNjYxfQ.LBAONOO31VUC2-LB8OFTMf78YUYN9DVJ3ac81X7bK8Q`
 
 
 ```
