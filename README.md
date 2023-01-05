@@ -1,5 +1,5 @@
 # Bookstore
-A plain PHP CRUD application where user can Add, Read, Update and delete book details.
+A plain PHP CRUD application where a user can Add, Read, Update and delete book details.
 
 
 ### What users can do :
