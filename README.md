@@ -7,6 +7,7 @@ A plain PHP CRUD application where user can Add, Read, Update and delete book de
 2. Create New Book details
 3. Update Book Title
 4. Update Book Author
+5. Delete Book details
 
 ## Installation
 ---
