@@ -132,7 +132,7 @@ Response sample:
 
 ## Read Book Details
 
-> POST /view-books
+> GET /view-books
 
 General:
 
